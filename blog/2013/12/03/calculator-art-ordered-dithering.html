@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Jack Willis – Calculator Art: Ordered Dithering</title>
+
+    <link rel="stylesheet" href="/stylesheets/attacus.css">
+
+    
+      <link rel="stylesheet" href="/stylesheets/syntax.css">
+    
+
+    
+      <link rel="stylesheet" href="/vendor/katex/katex.min.css">
+    
+
+    <meta name="twitter:card" content="summary">
+<meta property="og:site_name" content="Jack Willis">
+<meta property="og:url" content="https://www.attac.us/blog/2013/12/03/calculator-art-ordered-dithering.html">
+<meta property="og:title" content="Calculator Art: Ordered Dithering">
+
+
+
+  
+    <meta property="og:description" content="Drawing dithered images with TI-BASIC, while extremely slow, is mildly rewarding.">
+    <meta name="description" content="Drawing dithered images with TI-BASIC, while extremely slow, is mildly rewarding.">
+  
+
+  
+    <meta property="og:image" content="https://www.attac.us/images/calculator-art/graph3.gif">
+  
+
+
+  </head>
+
+  <body>
+    <header id="top">
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          |
+          <li><a href="/writing">Writing</a></li>
+        </ul>
+      </nav>
+      <h1>Jack Willis</h1>
+    </header>
+
+    <section class="content">
+      <article class="post">
+  <header>
+    
+    <h2 id="calculator-art-ordered-dithering"><a href="/blog/2013/12/03/calculator-art-ordered-dithering.html">Calculator Art: Ordered Dithering</a></h2>
+
+
+    <p>
+      <time datetime="2013-12-03">
+         3 December 2013
+      </time>
+    </p>
+  </header>
+
+  <section>
+    <style> figure.calcart { image-rendering: pixelated; } </style>
+
+<p>I found a way to draw 1-bit sketches in TI-BASIC on my calculator using dithering. I used ordered dithering because it is the easiest to implement, and all that is needed on a 96&times;64 screen. Here is the code I used, with comments:</p>
+
+<blockquote>
+
+<p>Set the 4&times;4 <a href="https://en.wikipedia.org/wiki/Ordered_dithering">Bayer matrix</a> to <code>[J]</code>.
+Note that these values are 17 times greater than the actual values in the Bayer matrix.</p>
+
+<figure class="highlight"><pre><code><span class="o">:</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">11</span><span class="p">][</span><span class="mi">13</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">7</span><span class="p">][</span><span class="mi">4</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">][</span><span class="mi">16</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span><span class="o">→</span><span class="no">J</span></code></pre></figure>
+
+<p>This will clear drawings, but make sure your <em>graphs</em> are also cleared before running this program.</p>
+
+<figure class="highlight"><pre><code><span class="o">:</span><span class="k">ClrDraw</span></code></pre></figure>
+
+<p>Iterate through each pixel in range, from the top left (0, 0) to the bottom right (94, 62).</p>
+
+<figure class="highlight"><pre><code><span class="o">:</span><span class="k">For</span><span class="p">(</span><span class="no">X</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">94</span><span class="p">)</span>
+<span class="o">:</span><span class="k">For</span><span class="p">(</span><span class="no">Y</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">62</span><span class="p">)</span></code></pre></figure>
+
+<p>We are graphing <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex"> z </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.04398em;">z</span></span></span></span>, a function of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex"> x </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">x</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex"> y </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span>, with a range of [0, 1],
+where 0 represents lightness and 1 represents darkness. Here, I am graphing <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mo>(</mo><mi>x</mi><mi mathvariant="normal">/</mi><mn>9</mn><mn>4</mn><mo>+</mo><mi>y</mi><mi mathvariant="normal">/</mi><mn>6</mn><mn>2</mn><mo>)</mo><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex"> z = (x / 94 + y / 62) / 2 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.04398em;">z</span><span class="mrel">=</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mord mathrm">/</span><span class="mord mathrm">9</span><span class="mord mathrm">4</span><span class="mbin">+</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mord mathrm">/</span><span class="mord mathrm">6</span><span class="mord mathrm">2</span><span class="mclose">)</span><span class="mord mathrm">/</span><span class="mord mathrm">2</span></span></span></span>.</p>
+
+<figure class="highlight"><pre><code><span class="o">:</span><span class="p">((</span><span class="no">X</span><span class="o">/</span><span class="mi">94</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="no">Y</span><span class="o">/</span><span class="mi">62</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span><span class="o">→</span><span class="no">Z</span></code></pre></figure>
+
+<p>Note that matrix indices start at 1 instead of 0 in TI-BASIC.
+If <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex"> z </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.04398em;">z</span></span></span></span> is greater than the value of the Bayer matrix at <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex"> (x, y) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span>, the pixel will be displayed in black.</p>
+
+<figure class="highlight"><pre><code><span class="o">:</span><span class="k">If</span> <span class="no">Z</span><span class="o">&gt;</span><span class="p">[</span><span class="no">J</span><span class="p">](</span><span class="n">remainder</span><span class="p">(</span><span class="no">X</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="o">,</span><span class="n">remainder</span><span class="p">(</span><span class="no">Y</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">17</span>
+<span class="o">:</span><span class="k">Then</span>
+<span class="o">:</span><span class="k">Pxl-On</span><span class="p">(</span><span class="no">Y</span><span class="p">,</span><span class="no">X</span><span class="p">)</span>
+<span class="o">:</span><span class="k">End</span>
+
+<span class="o">:</span><span class="k">End</span>
+<span class="o">:</span><span class="k">End</span>
+</code></pre></figure>
+
+</blockquote>
+
+<p>This is how it came out:</p>
+
+<figure class="calcart">
+  <img src="/images/calculator-art/graph1.gif" alt="Graph of the first function" width="188" />
+</figure>
+
+<p>And with more interesting functions, like
+<code class="highlight"><span class="n">remainder</span><span class="p">(</span><span class="no">X</span>,<span class="no">Y</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="no">Y</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">→</span><span class="no">Z</span></code>:</p>
+
+<figure class="calcart">
+  <img src="/images/calculator-art/graph2.gif" alt="Graph of the second function" width="188" />
+</figure>
+
+<p>Or even
+<code class="highlight"><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="no">X</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="mi">400</span><span class="p">)</span><span class="o">+</span><span class="n">cos</span><span class="p">(</span><span class="no">Y</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="mi">200</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span><span class="o">→</span><span class="no">Z</span></code>:</p>
+
+<figure class="calcart">
+  <img src="/images/calculator-art/graph3.gif" alt="Graph of the third function" width="188" />
+</figure>
+
+<p>If you try this out, get ready for long drawing times, as TI-BASIC for the Z80 chipset is <em>extremely</em> slow. ◈</p>
+  </section>
+</article>
+
+<section class="comments">
+  <div id="disqus_thread"></div>
+
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://www.attac.us//blog/2013/12/03/calculator-art-ordered-dithering.html";
+      this.page.identifier = "/blog/2013/12/03/calculator-art-ordered-dithering";
+    };
+
+    (function() {
+      var s = document.createElement('script');
+      s.src = 'https://attacus.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      document.head.appendChild(s);
+    })();
+  </script>
+
+  <noscript>
+    <p>
+      Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus</a>.
+    </p>
+  </noscript>
+
+</section>
+
+    </section>
+
+    
+  </body>
+</html>
