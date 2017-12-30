@@ -1,13 +1,13 @@
 /* 2017 Jack Willis - released under the GNU FDL 1.3+ and CC BY-SA 4.0+ - see https://www.attac.us/writing/#license */
 
-body { font: 14px/20px 'Droid Serif', 'Georgia', serif; margin: 0 auto; padding: 0 1em; }
+body { font: 14px/25px 'Droid Serif', 'Georgia', serif; margin: 0 auto; padding: 0 1em; }
 .katex { font-size: 1.08em !important; }
 
 body { max-width: 32em; min-width: 12em; }
-@media (min-width: 40em) { body { max-width: 46em; } }
+@media (min-width: 40em) { body { max-width: 48em; } }
 
 body { background: white; }
-h1 { color: #AE2A2A; }
+h1, h1 a, h1 a:link, h1 a link:visited { color: #AE2A2A !important; }
 h2 { color: #186218; }
 
 p { hyphens: auto; }
@@ -16,15 +16,16 @@ h1, h2, h3, header nav, .writing li .title {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Siyam Rupali, sans-serif;
 }
 
-h1 { font-weight: 900; }
-h2 { margin-top: 1.5em; }
+body > header { margin: 1em 0; }
+@media (min-width: 40em) { body > header { margin: 4em 0 1em 0; } }
 
-body > header { margin: 1em 0 2em 0; }
-@media (min-width: 40em) { body > header { margin: 4em 0 2.5em 0; } }
-
-body > header nav { font-size: 125%; font-weight: bold; font-variant: all-small-caps; }
+body > header h1, body > header nav { display: inline-block; }
+body > header nav { font-size: 125%; font-weight: bold; font-variant: all-small-caps; margin-left: 0.5em; }
 body > header nav ul { padding: 0; }
 body > header nav ul li { margin: 0; display: inline-block; }
+
+body > header nav ul li:after { content: " | "; }
+body > header nav ul li:last-child:after { content: ""; }
 
 article.post header { margin-bottom: 1em; }
 article.post header > * { margin: 0.25em 0; }
@@ -36,7 +37,7 @@ article.post figure.highlight { text-align: left; padding: 0.25em 1em; overflow-
 article.post figure img { max-width: 100%; }
 
 code { font-family: 'Fira Code', 'Fira Mono', monospace; }
-pre code { font-size: 90%; line-height: 0.5 !important; }
+pre code { font-size: 90%; line-height: 0.75 !important; }
 
 .writing { margin-top: 5em; }
 .writing ul { list-style: none; margin: 0; padding: 0; }
@@ -78,7 +79,7 @@ aside.jack figure img {
 
 aside.jack figure figcaption {
   font-size: 75%;
-  line-height: 1.20em;
+  line-height: 1.40em;
 }
 
 @media (min-width: 40em) {

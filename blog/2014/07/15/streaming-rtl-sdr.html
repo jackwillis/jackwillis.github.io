@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Streaming RTL-SDR over HTTP</title>
+    <title>Streaming RTL-SDR over HTTP — attac.us</title>
 
     <link rel="stylesheet" href="/stylesheets/attacus.css">
 
@@ -15,7 +15,7 @@
     
 
     <meta name="twitter:card" content="summary">
-<meta property="og:site_name" content="Jack Willis">
+<meta property="og:site_name" content="attac.us">
 <meta property="og:url" content="https://www.attac.us/blog/2014/07/15/streaming-rtl-sdr.html">
 <meta property="og:title" content="Streaming RTL-SDR over HTTP">
 
@@ -35,17 +35,17 @@
 
   <body>
     <header id="top">
+      <h1><a href="/">attac.us</a></h1>
+
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
-          |
           <li><a href="/writing">Writing</a></li>
         </ul>
       </nav>
-      <h1>Jack Willis</h1>
     </header>
 
-    <section class="content">
+    <div class="content">
       <article class="post">
   <header>
     
@@ -59,7 +59,7 @@
     </p>
   </header>
 
-  <section>
+  <div class="content">
     <p>Realtek makes a $20 USB software-defined radio tuner device
 called an <a href="http://sdr.osmocom.org/trac/wiki/rtl-sdr">RTL2832U</a>-based,
 also known as an <em>rtl-sdr</em>.
@@ -121,12 +121,14 @@ The settings used here are 320 kB/s and port 8080.</p>
 <span class="gp">$ </span>police | mp3encode320 | stream8080</code></pre></figure>
 
 <p>Then you can use a media player to play your stream at <code class="highlighter-rouge">http://localhost:8080</code>.
-Happy listening! ◈</p>
+Happy listening!</p>
 
-  </section>
+  </div>
 </article>
 
 <section class="comments">
+  <h3>Comments</h3>
+
   <div id="disqus_thread"></div>
 
   <script>
@@ -151,7 +153,17 @@ Happy listening! ◈</p>
 
 </section>
 
-    </section>
+    </div>
+
+    <footer>
+      <p id="license">
+        <small>
+          &copy; Jack Willis, 2017.
+          This website is a free cultural work released under the
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/"><abbr title="Creative Commons Attribution 4.0 International License">CC BY-SA 4.0</abbr></a> license.
+        </small>
+      </p>
+    </footer>
 
     
   </body>
