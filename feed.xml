@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+    <title>attac.us</title>
+    <link href="https://www.attac.us"/>
+    <author><name>Jack Willis</name></author>
+    <id>urn:uuid:7ee74904-5758-475a-b6ad-c7440a9d4662</id>
+    <updated>2017-12-31</updated>
+
+    
+
+    <entry>
+        <title>Streaming RTL-SDR over HTTP</title>
+        <link href="https://www.attac.us/blog/2014/07/15/streaming-rtl-sdr.html"/>
+        <id>urn:uuid:70f4a978-32e0-4445-9590-a2418bdd8685</id>
+        <updated>2017-12-31</updated>
+        <summary>It's easy to stream MP3 audio from your software-defined radio tuner, even on a netbook.</summary>
+    </entry>
+
+    
+
+    <entry>
+        <title>Calculator Art: Ordered Dithering</title>
+        <link href="https://www.attac.us/blog/2013/12/03/calculator-art-ordered-dithering.html"/>
+        <id>urn:uuid:7a6cfd9b-9c40-4c81-a14f-41526e7535a5</id>
+        <updated>2017-12-05</updated>
+        <summary>Drawing dithered images with TI-BASIC, while extremely slow, is mildly rewarding.</summary>
+    </entry>
+
+    
+
+</feed>

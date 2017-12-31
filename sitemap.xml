@@ -3,25 +3,31 @@
     
     <url>
         <loc>https://www.attac.us/404</loc>
-        
+        <lastmod></lastmod>
+        <changefreq>weekly</changefreq>
+    </url>
+    
+    <url>
+        <loc>https://www.attac.us/feed.xml</loc>
+        <lastmod></lastmod>
         <changefreq>weekly</changefreq>
     </url>
     
     <url>
         <loc>https://www.attac.us/blog/</loc>
-        
+        <lastmod></lastmod>
         <changefreq>weekly</changefreq>
     </url>
     
     <url>
         <loc>https://www.attac.us/</loc>
-        
+        <lastmod>2017-12-31</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     
     <url>
         <loc>https://www.attac.us/sitemap.xml</loc>
-        
+        <lastmod></lastmod>
         <changefreq>weekly</changefreq>
     </url>
     
@@ -31,17 +37,13 @@
     
     <url>
         <loc>https://www.attac.us/blog/2014/07/15/streaming-rtl-sdr.html</loc>
-        
         <lastmod>2017-12-31</lastmod>
-        
         <changefreq>weekly</changefreq>
     </url>
     
     <url>
         <loc>https://www.attac.us/blog/2013/12/03/calculator-art-ordered-dithering.html</loc>
-        
         <lastmod>2017-12-05</lastmod>
-        
         <changefreq>weekly</changefreq>
     </url>
     
