@@ -36,7 +36,6 @@
   <body>
     <header id="top">
       <h1><a href="/">attac.us</a></h1>
-
       <nav>
         <ul>
           <li><a href="/blog">Blog</a></li>
@@ -44,7 +43,7 @@
       </nav>
     </header>
 
-    <div class="content">
+    <main>
       <article class="post">
   <header>
     
@@ -66,14 +65,6 @@ This chip was originally used in European TV tuners,
 but all kinds of demodulation are available in software.
 Mine has a frequency range of 48 MHz to 863 MHz but the range varies between models.</p>
 
-<figure>
-  <img src="/images/rtl-sdr/rtl.jpg" width="200" alt="Generic image of an RTL-SDR reciever" />
-  <figcaption>
-    The radio tuner has a male USB connector
-    and a SMA F connector.
-  </figcaption>
-</figure>
-
 <p>I’ve been using the amazing <a href="http://gqrx.dk/">GQRX</a>
 graphical program to browse frequencies
 as well as the <a href="http://kmkeen.com/rtl-demod-guide/"><code class="highlighter-rouge">rtl-fm</code></a>
@@ -84,11 +75,12 @@ and GQRX stutters some.</p>
 <figure>
   <img src="/images/rtl-sdr/gqrx.jpg" alt="Screenshot of GQRX" />
   <figcaption>
-    GQRX demodulating shortwave radio.
-    The <a href="https://www.youtube.com/watch?v=O9pLDLvOsPk">waterfall display</a> is shown.
-    <small>
-      (Image: <a href="http://www.flickr.com/photos/csete/9300199921/">Flickr/csete</a>.)
-    </small>
+    <p>
+      GQRX demodulating shortwave radio.
+      The <a href="https://www.youtube.com/watch?v=O9pLDLvOsPk">waterfall display</a> is shown.
+
+      Image credit: <a href="http://www.flickr.com/photos/csete/9300199921/">Flickr/csete</a>.
+    </p>
   </figcaption>
 </figure>
 
@@ -98,34 +90,29 @@ and this is the solution I came up with, using shell scripts:</p>
 
 <p>I used LAME for mp3 encoding,
 and VLC for streaming.
-The settings used here are 320 kB/s and port 8080.</p>
+The settings used here are 320 kB/s and port 8080.
+I put these aliases into <code class="highlighter-rouge">streaming.sh</code>:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># streaming.sh
-</span>
-<span class="nb">alias </span><span class="nv">stream8080</span><span class="o">=</span><span class="s1">'cvlc - --sout "#standard{access=http,mux=raw,dst=:8080}"'</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">alias </span><span class="nv">stream8080</span><span class="o">=</span><span class="s1">'cvlc - --sout "#standard{access=http,mux=raw,dst=:8080}"'</span>
 <span class="nb">alias </span><span class="nv">mp3encode320</span><span class="o">=</span><span class="s1">'lame -r --signed -m m -s 32000 -q 9 - -'</span></code></pre></figure>
 
-<p>I wrote some station shortcuts:</p>
+<p>I also put some local station shortcuts in there:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># stations.sh
-</span>
-<span class="nb">alias </span><span class="nv">wort</span><span class="o">=</span><span class="s1">'rtl_fm -f 89.9M -M wbfm'</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">alias </span><span class="nv">wort</span><span class="o">=</span><span class="s1">'rtl_fm -f 89.9M -M wbfm'</span>
 <span class="nb">alias </span><span class="nv">wxj87</span><span class="o">=</span><span class="s1">'rtl_fm -f 162.55M -N -s 32k'</span>
 <span class="nb">alias </span><span class="nv">police</span><span class="o">=</span><span class="s1">'rtl_fm -f 155.655M -f 857.7125 -f 158.850 -N -s 32k'</span></code></pre></figure>
 
-<p>Finally:</p>
+<p>To listen to <a href="http://www.nws.noaa.gov/nwr/coverage/site2.php?State=WI&amp;Site=WXJ87">WXJ87</a>, for example, you could run:</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span><span class="nb">source </span>streaming.sh
-<span class="gp">$ </span><span class="nb">source </span>stations.sh
-<span class="gp">$ </span>police | mp3encode320 | stream8080</code></pre></figure>
+<span class="gp">$ </span>wxj87 | mp3encode320 | stream8080</code></pre></figure>
 
-<p>Then you can use a media player to play your stream at <code class="highlighter-rouge">http://localhost:8080</code>.
-Happy listening!</p>
+<p>Now you can use a media player to play your stream at <code class="highlighter-rouge">http://localhost:8080</code>.</p>
 
   </div>
 </article>
 
-<section class="comments">
+<div class="comments" role="form">
   <h3>Comments</h3>
 
   <div id="disqus_thread"></div>
@@ -150,20 +137,18 @@ Happy listening!</p>
     </p>
   </noscript>
 
-</section>
+</div>
 
-    </div>
+    </main>
 
     <footer>
-      <p id="license">
+      <p>
         <small>
-          &copy; Jack Willis, 2017.
+          &copy; 2017 Jack Willis.
           This website is free content released under the
           <a href="https://creativecommons.org/licenses/by-sa/4.0/"><abbr title="Creative Commons Attribution 4.0 International License">CC BY-SA 4.0</abbr></a> license.
         </small>
       </p>
     </footer>
-
-    
   </body>
 </html>
