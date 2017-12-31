@@ -1,10 +1,21 @@
 /* 2017 Jack Willis - CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0/> */
 
-body { font: 14px/25px 'Droid Serif', 'Georgia', serif; margin: 0 auto; padding: 0 1em; }
-.katex { font-size: 1.08em !important; }
+body {
+  font-size: 12px;
+  line-height: 22px;
+  font-family: 'Merriweather', 'Droid Serif', 'Georgia', serif;
+  margin: 0 auto;
+  padding: 0 1em;
+  max-width: 32em; min-width: 12em;
+}
 
-body { max-width: 32em; min-width: 12em; }
-@media (min-width: 40em) { body { max-width: 48em; } }
+@media (min-width: 40em) {
+  body {
+    font-size: 14px;
+    line-height: 25px;
+    max-width: 48em;
+  }
+}
 
 /* lol using named colors
 */
@@ -66,10 +77,12 @@ blockquote {
   transform: scale(1) rotate(-7deg) translate(0, 0) skew(7deg, 0);
 }
 
+.katex { font-size: 1.08em !important; }
+
 /* Front page */
 
 aside.jack figure {
-  margin: 2.5em auto 0 auto;
+  margin: 0 auto 2em auto;
   max-width: 300px;
 }
 
@@ -79,7 +92,7 @@ aside.jack figure img {
 
 aside.jack figure figcaption {
   font-size: 75%;
-  line-height: 1.40em;
+  line-height: 1.6em;
 }
 
 @media (min-width: 40em) {
