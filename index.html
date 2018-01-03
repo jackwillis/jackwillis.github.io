@@ -30,10 +30,88 @@
 
 
 
-    <link rel="alternate" href="feed.xml" type="application/atom+xml" title="Sitewide ATOM Feed" />
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Sitewide ATOM Feed">
+
+    <style>
+      @font-face {
+        font-family: 'Vollkorn';
+        url('/vendor/vollkorn/Vollkorn-Regular.woff2') format('woff2'),
+        url('/vendor/vollkorn/Vollkorn-Regular.woff') format('woff'),
+        url('/vendor/vollkorn/Vollkorn-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'Vollkorn';
+        url('/vendor/vollkorn/Vollkorn-Italic.woff2') format('woff2'),
+        url('/vendor/vollkorn/Vollkorn-Italic.woff') format('woff'),
+        url('/vendor/vollkorn/Vollkorn-Italic.ttf') format('truetype');
+        font-weight: 400;
+        font-style: italic;
+      }
+
+      @font-face {
+        font-family: 'Vollkorn';
+        url('/vendor/vollkorn/Vollkorn-Semibold.woff2') format('woff2'),
+        url('/vendor/vollkorn/Vollkorn-Semibold.woff') format('woff'),
+        url('/vendor/vollkorn/Vollkorn-Semibold.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'Vollkorn';
+        url('/vendor/vollkorn/Vollkorn-SemiboldItalic.woff2') format('woff2'),
+        url('/vendor/vollkorn/Vollkorn-SemiboldItalic.woff') format('woff'),
+        url('/vendor/vollkorn/Vollkorn-SemiboldItalic.ttf') format('truetype');
+        font-weight: 600;
+        font-style: italic;
+      }
+
+      body {
+        font: 12pt/18pt 'Vollkorn', 'Georgia', serif;
+      }
+
+      @font-face {
+        font-family: 'Roboto';
+        url('/vendor/roboto/Roboto-Bold.woff2') format('woff2'),
+        url('/vendor/roboto/Roboto-Bold.woff') format('woff'),
+        url('/vendor/roboto/Roboto-Bold.ttf') format('truetype');
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      h1, h2, h3, header nav, .writing li .title {
+          font-family: Roboto, sans-serif;
+          font-weight: 700;
+      }
+
+      @font-face {
+        font-family: 'Fira Code';
+        url('/vendor/fira/woff2/FiraCode-Regular.woff2') format('woff2'),
+        url('/vendor/fira/woff/FiraCode-Regular.woff') format('woff'),
+        url('/vendor/fira/ttf/FiraCode-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'Fira Code';
+        url('/vendor/fira/woff2/FiraCode-Bold.woff2') format('woff2'),
+        url('/vendor/fira/woff/FiraCode-Bold.woff') format('woff'),
+        url('/vendor/fira/ttf/FiraCode-Bold.ttf') format('truetype');
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      code {
+        font: 10pt 'Fira Code', 'Fira Mono', monospace;
+      }
+    </style>
   </head>
 
-  <body>
+  <body class="frontispice">
     <header id="top">
       <h1><a href="/">attac.us</a></h1>
       <nav>
@@ -71,7 +149,7 @@
     in Madison, Wisconsin.
   </p>
 
-  <p>
+  <p class="noindent">
     My computer science interests include
     web standards and usability,
     and my botany interests include
@@ -79,7 +157,7 @@
     mathematical biology.
   </p>
 
-  <p>
+  <p class="noindent">
     My political interests include
     ecology,
     civil and labor rights,
@@ -106,7 +184,7 @@
       <p>
         <small>
           &copy; 2017 Jack Willis.
-          This website is free content released under the
+          This website is released under the
           <a href="https://creativecommons.org/licenses/by-sa/4.0/"><abbr title="Creative Commons Attribution 4.0 International License">CC BY-SA 4.0</abbr></a> license.
         </small>
       </p>

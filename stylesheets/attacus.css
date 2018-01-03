@@ -1,16 +1,29 @@
 /* 2017 Jack Willis - CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0/> */
 
 body {
-  font: 11pt/20pt 'Merriweather', 'Droid Serif', 'Georgia', serif;
   margin: 0 auto;
   padding: 0 1em;
   max-width: 32em;
   min-width: 12em;
 }
 
+body > header {
+  margin: 1em 0;
+}
+
 @media (min-width: 40em) {
   body {
-    max-width: 42em;
+    width: 40em;
+  }
+
+  /* The main page is wider than the rest. */
+  body.frontispice {
+    width: 100%;
+    max-width: 48em;
+  }
+
+  body.frontispice > header {
+    margin: 4em 0 1em 0;
   }
 }
 
@@ -23,13 +36,11 @@ a:link { color: saddlebrown; }
 a:visited { color: black; }
 
 p { hyphens: auto; }
+p + p { text-indent: 1em; }
+.noindent { text-indent: 0; }
 
-h1, h2, h3, header nav, .writing li .title {
-  font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Siyam Rupali, sans-serif;
-}
-
-body > header { margin: 1em 0; }
-@media (min-width: 40em) { body > header { margin: 4em 0 1em 0; } }
+.frontispice h1 { font-size: 200%; }
+h1 { font-size: 150%; }
 
 body > header h1, body > header nav { display: inline-block; }
 body > header nav { font-size: 125%; font-weight: bold; font-variant: all-small-caps; }
@@ -44,11 +55,19 @@ nav.writing, article.post { margin: 1em 0; }
 p#license, section.comments { margin-top: 2em; }
 
 article.post figure { text-align: center; padding: 1em; margin: 1em; }
-article.post figure.highlight { text-align: left; padding: 0.25em 1em; overflow-x: auto; }
+article.post figure.highlight { text-align: left; padding: 0.25em 1em; }
 article.post figure img { max-width: 100%; }
 
-code { font-family: 'Fira Code', 'Fira Mono', monospace; }
-pre code { font-size: 90%; line-height: 0.75 !important; }
+pre {
+  line-height: 16pt;
+  overflow-x: auto;
+}
+
+code {
+  font-feature-settings: "calt" 1;
+  text-rendering: optimizeLegibility;
+  word-break: break-all;
+}
 
 .writing { margin-top: 5em; }
 .writing ul { list-style: none; margin: 0; padding: 0; }
@@ -89,7 +108,7 @@ aside.jack figure img {
 
 figcaption {
   font-size: 75%;
-  line-height: 1.6em;
+  line-height: 1.2em;
 }
 
 @media (min-width: 40em) {
@@ -105,7 +124,7 @@ figcaption {
   }
 }
 
-footer[role=contentinfo] { color: #555; }
+body > footer { margin-top: 2em; color: #555; }
 
 /* Post-specific */
 
