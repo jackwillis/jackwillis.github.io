@@ -5,7 +5,7 @@
         <loc>https://www.attac.us/404</loc>
 
         
-            <lastmod>2018-01-13</lastmod>
+            <lastmod>2018-01-24</lastmod>
         
 
         <changefreq>weekly</changefreq>
@@ -35,7 +35,17 @@
         <loc>https://www.attac.us/</loc>
 
         
-            <lastmod>2018-01-13</lastmod>
+            <lastmod>2018-01-24</lastmod>
+        
+
+        <changefreq>weekly</changefreq>
+    </url>
+    
+    <url>
+        <loc>https://www.attac.us/projects.html</loc>
+
+        
+            <lastmod>2018-01-24</lastmod>
         
 
         <changefreq>weekly</changefreq>
@@ -45,7 +55,7 @@
         <loc>https://www.attac.us/sitemap.xml</loc>
 
         
-            <lastmod>2018-01-13</lastmod>
+            <lastmod>2018-01-24</lastmod>
         
 
         <changefreq>weekly</changefreq>
@@ -55,7 +65,7 @@
         <loc>https://www.attac.us/thanks.html</loc>
 
         
-            <lastmod>2018-01-13</lastmod>
+            <lastmod>2018-01-24</lastmod>
         
 
         <changefreq>weekly</changefreq>
