@@ -28,18 +28,18 @@
 
     <url>
         <loc>https://www.attac.us/sitemap.xml</loc>
-        <lastmod>2018-01-28</lastmod>
+        <lastmod>2018-01-31</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://www.attac.us/feed.xml</loc>
-        <lastmod>2017-12-31</lastmod>
+        <lastmod>2018-01-31</lastmod>
         <changefreq>weekly</changefreq>
     </url>
 
     <url>
         <loc>https://www.attac.us/blog/</loc>
-        <lastmod>2017-12-31</lastmod>
+        <lastmod>2018-01-31</lastmod>
         <changefreq>weekly</changefreq>
     </url>
 
@@ -54,6 +54,12 @@
     <url>
         <loc>https://www.attac.us/blog/2014/07/15/streaming-rtl-sdr.html</loc>
         <lastmod>2017-12-31</lastmod>
+        <changefreq>weekly</changefreq>
+    </url>
+
+    <url>
+        <loc>https://www.attac.us/blog/2018/01/31/botany-resources.html</loc>
+        <lastmod>2018-01-31</lastmod>
         <changefreq>weekly</changefreq>
     </url>
 
@@ -73,6 +79,24 @@
     </url>
     
     <url>
+        <loc>https://www.attac.us/etc/botany/common-plants-of-wisconsin.pdf</loc>
+        <lastmod>2018-01-31</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    
+    <url>
+        <loc>https://www.attac.us/etc/botany/plant-latin-dictionary.pdf</loc>
+        <lastmod>2018-01-31</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    
+    <url>
+        <loc>https://www.attac.us/etc/madison_police_killings_2017.R</loc>
+        <lastmod>2018-01-29</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    
+    <url>
         <loc>https://www.attac.us/favicon.ico</loc>
         <lastmod>2018-01-28</lastmod>
         <changefreq>monthly</changefreq>
@@ -81,6 +105,30 @@
     <url>
         <loc>https://www.attac.us/feed.xml</loc>
         <lastmod>2018-01-28</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    
+    <url>
+        <loc>https://www.attac.us/images/botany/common-plants-helianthus.jpg</loc>
+        <lastmod>2018-01-31</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    
+    <url>
+        <loc>https://www.attac.us/images/botany/helianthus.jpg</loc>
+        <lastmod>2018-01-31</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    
+    <url>
+        <loc>https://www.attac.us/images/botany/helianthus_thumb.jpg</loc>
+        <lastmod>2018-01-31</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    
+    <url>
+        <loc>https://www.attac.us/images/botany/plant-latin-dictionary.jpg</loc>
+        <lastmod>2018-01-31</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     
@@ -111,6 +159,12 @@
     <url>
         <loc>https://www.attac.us/images/jack.jpg</loc>
         <lastmod>2018-01-28</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    
+    <url>
+        <loc>https://www.attac.us/images/madison/madison-police-killings-2016.svg</loc>
+        <lastmod>2018-01-29</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     
