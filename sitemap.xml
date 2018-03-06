@@ -4,6 +4,11 @@
     <!-- Template pages -->
 
     <url>
+        <loc>https://www.attac.us/stylesheets/attacus.css</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+
+    <url>
         <loc>https://www.attac.us/blog/</loc>
         <changefreq>weekly</changefreq>
     </url>
@@ -170,6 +175,18 @@
     <url>
         <loc>https://www.attac.us/robots.txt</loc>
         <lastmod>2018-01-28</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    
+    <url>
+        <loc>https://www.attac.us/stylesheets/katex.css</loc>
+        <lastmod>2018-01-03</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    
+    <url>
+        <loc>https://www.attac.us/stylesheets/syntax.css</loc>
+        <lastmod>2018-01-08</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     
