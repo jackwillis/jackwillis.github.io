@@ -74,6 +74,21 @@
         <changefreq>weekly</changefreq>
     </url>
 
+    <url>
+        <loc>https://www.attac.us/lab/</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+
+    <url>
+        <loc>https://www.attac.us/books/</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+
+    <url>
+        <loc>https://www.attac.us/books/rcrs/</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+
     <!-- Static files -->
     
     <url>
