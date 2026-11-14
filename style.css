@@ -102,3 +102,22 @@ footer {
   color: var(--muted);
   font-size: .95rem;
 }
+
+.github-cta {
+  display: inline-block;
+  padding: .75rem 1.1rem;
+  border-radius: .45rem;
+  background: var(--link);
+  color: var(--background);
+  font-weight: 650;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: opacity 140ms ease;
+}
+
+.github-cta:hover { opacity: .85; }
+.github-cta:focus-visible { outline-offset: 5px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .github-cta { transition: none; }
+}
